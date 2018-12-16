@@ -6,10 +6,10 @@ public class BallSpawner : MonoBehaviour {
 
     public BallManager BallPrefab;
     private bool spawn = true;
+
     public float minSpawnDelay = 1f;
     public float maxSpawnDelay = 5f;
 
-	// Use this for initialization
 	IEnumerator Start ()
     {
 		while (spawn)
@@ -26,9 +26,4 @@ public class BallSpawner : MonoBehaviour {
         BallPrefab.GetComponent<Transform>().localScale = new Vector3(ballsize, ballsize,0);
         Instantiate(BallPrefab, transform.position, transform.rotation);
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
