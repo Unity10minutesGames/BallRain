@@ -6,8 +6,6 @@ public class TimeDisplay : MonoBehaviour {
     private GameManager gameManager;
     private Text timerText;
 
-    private string missingTime = "X:X";
-
     private void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
@@ -27,7 +25,7 @@ public class TimeDisplay : MonoBehaviour {
         }
         else
         {
-            timerText.text = missingTime;
+            timerText.text = gameManager.missingTime;
         }
     }
 }

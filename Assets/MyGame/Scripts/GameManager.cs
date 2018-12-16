@@ -4,8 +4,8 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour {
 
     public string startText = "0:0";
+    public string missingTime = "X:X";
     public string uitext;
-
 
     private bool playerHit;
     private bool startTimer;
@@ -35,8 +35,8 @@ public class GameManager : MonoBehaviour {
         
     }
 
-    // Use this for initialization
-    void Start () {
+    void Start ()
+    {
         timerText = FindObjectOfType<Text>();
         timer = Timer.Instance;
         sceneLoader = FindObjectOfType<SceneLoader>();
@@ -44,8 +44,8 @@ public class GameManager : MonoBehaviour {
         startTimer = true;
     }
 	
-	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 
         if (startTimer)
         {
@@ -63,8 +63,6 @@ public class GameManager : MonoBehaviour {
             timer.StopTimer();
             sceneLoader.LoadGameOver();
         }
-
-        
 	}
 
     public void SetPlayerHit(bool hit)

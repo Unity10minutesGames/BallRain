@@ -17,7 +17,6 @@ public class SceneLoader : MonoBehaviour {
 
     public void LoadMainGame()
     {
-        
         SceneManager.LoadScene("BallRain");
         if (gameManager != null)
         {
