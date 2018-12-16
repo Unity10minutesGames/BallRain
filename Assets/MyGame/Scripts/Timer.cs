@@ -7,28 +7,13 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour {
 
     private static Timer _instance;
-
-    GameManager gameManager;
-
+    private GameManager gameManager;
     private int seconds, minutes;
 
     private void Awake()
     {
-        //SetUpSingelton();
         _instance = this;
-    }
-
-    private void SetUpSingelton()
-    {
-        int numberTimer = FindObjectsOfType<Timer>().Length;
-        if (numberTimer > 1)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            DontDestroyOnLoad(gameObject);
-        }
+        ResetTimer();
     }
 
     public static Timer Instance
@@ -38,20 +23,11 @@ public class Timer : MonoBehaviour {
             if (_instance == null)
             {
                 _instance = FindObjectOfType<Timer>();
-                Debug.Log("create Timer instance first time");
             }
 
             return _instance;
         }
     }
-
-    // Use this for initialization
-    void Start () {
-        Debug.Log("Timer created in Start");
-
-        ResetTimer();
-
-	}
 
     public void ResetTimer()
     {
