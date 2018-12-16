@@ -14,18 +14,16 @@ public class SceneLoader : MonoBehaviour {
 
     public void LoadWelcome()
     {
-        SceneManager.LoadScene(0);
-        if(gameManager != null)
-        {
-            gameManager.ResetTimerText();
-        }
+        SceneManager.LoadScene(0); 
     }
 
     public void LoadMainGame()
     {
+        
         SceneManager.LoadScene("BallRain");
         if (gameManager != null)
         {
+            gameManager.SetTimerText("0:0");
             gameManager.EnableTimer(true);
         }
     }

@@ -10,7 +10,6 @@ public class TimeDisplay : MonoBehaviour {
     private Text timerText;
 
     private string missingTime = "X:X";
-    private string startTime = "0:0";
 
     private void Start()
     {
@@ -20,7 +19,7 @@ public class TimeDisplay : MonoBehaviour {
 
     public void resetTimerText()
     {
-        timerText.text = startTime;
+        timerText.text = gameManager.startText;
     }
 
     private void Update()

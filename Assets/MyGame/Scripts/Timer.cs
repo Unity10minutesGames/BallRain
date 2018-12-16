@@ -71,10 +71,6 @@ public class Timer : MonoBehaviour {
         StopAllCoroutines();
     }
 
-    public string getLastTime()
-    {
-        return minutes.ToString() + ":" + seconds.ToString();
-    }
 
     private IEnumerator RunTimer()
     {

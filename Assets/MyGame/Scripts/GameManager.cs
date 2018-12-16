@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
+    public string startText = "0:0";
     public string uitext;
+
 
     private bool playerHit;
     private bool startTimer;
@@ -15,14 +17,11 @@ public class GameManager : MonoBehaviour {
 
     Timer timer;
 
+    SceneLoader sceneLoader;
+
     private void Awake()
     {
         SetUpSingelton();
-    }
-
-    public void ResetTimerText()
-    {
-        uitext = "0:0";
     }
 
     private void SetUpSingelton()
@@ -43,6 +42,7 @@ public class GameManager : MonoBehaviour {
     void Start () {
         timerText = FindObjectOfType<Text>();
         timer = Timer.Instance;
+        sceneLoader = FindObjectOfType<SceneLoader>();
         playerHit = false;
         startTimer = true;
     }
@@ -64,11 +64,12 @@ public class GameManager : MonoBehaviour {
         {
             playerHit = !playerHit;
             timer.StopTimer();
-            SceneManager.LoadScene("GameOver");
+            sceneLoader.LoadGameOver();
         }
 
         
 	}
+
     public void SetPlayerHit(bool hit)
     {
         playerHit = hit;
