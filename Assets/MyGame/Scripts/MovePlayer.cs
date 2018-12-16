@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MovePlayer : MonoBehaviour {
     private const string AXISHORIZONTAL = "Horizontal";
