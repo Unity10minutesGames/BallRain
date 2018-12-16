@@ -10,6 +10,13 @@ public class BallSpawner : MonoBehaviour {
     public float minSpawnDelay = 1f;
     public float maxSpawnDelay = 5f;
 
+    public int xMinLeft = -215;
+    public int xMaxRight = 333;
+    public int ballMinSize = 20;
+    public int ballMaxSize = 58;
+
+    public int yPos = 450;
+
 	IEnumerator Start ()
     {
 		while (spawn)
@@ -21,8 +28,8 @@ public class BallSpawner : MonoBehaviour {
 
     private void SpawnBall()
     {
-        transform.position = new Vector3(Random.Range(-215, 333), 450, 0);
-        float ballsize = Random.Range(20, 58);
+        transform.position = new Vector3(Random.Range(xMinLeft, xMaxRight), yPos, 0);
+        float ballsize = Random.Range(ballMinSize, ballMaxSize);
         BallPrefab.GetComponent<Transform>().localScale = new Vector3(ballsize, ballsize,0);
         Instantiate(BallPrefab, transform.position, transform.rotation);
     }
